@@ -1,0 +1,47 @@
+    1  exit
+    2  nano ~/.zshrc
+    3  server RedOS
+    4  exit
+    5  chmod 600 ~/.ssh/my_vm_key
+    6  ip a
+    7  ip -br link
+    8  nmcli connection show
+    9  sudo nmcli connection modify "Cloud-init enp7s0" ipv4.method auto
+   10  nmcli connection show
+   11  sudo nmcli connection modify "cloud-init enp7s0" ipv4.method auto
+   12  sudo nmcli connection mpdify "cloud-init enp7s0" connection.autoconnect yes
+   13  sudo nmcli connection modify "cloud-init enp7s0" connection.autoconnect yes
+   14  nmcli connection show "cloud-init enp7s0" | grep -E 'ipv4.method|connection.autoconnect:'
+   15  ip -4 addr show enp7s0
+   16  sudo hostnamectl set-hostname mephi-2026.domain.local
+   17  hostnamectl
+   18  hostname
+   19  sudo nano /etc/cloud/cloud.cfg
+   20  grep preserve_hostname /etc/cloud/cloud.cfg
+   21  ping -c 4 8.8.8.8 > ping.out
+   22  cat ping.out
+   23  ls -l ping.out
+   24  sudo dnf check-update
+   25  sudo dnf upgrade -y
+   26  sudo dnf check-update
+   27  sudo dnf install nginx libcap-ng-utils
+   28  rpm -q nginx libcap-ng-utils
+   29  nginx -v
+   30  command -v captest
+   31  sudo dnf download --destdir=/tmp tcpdump
+   32  ls -l /tmp/tcpdimp-*.rpm
+   33  ls -l /tmp/tcpdump*.rpm
+   34  sudo rpm -Uvh /tmp/tcpdump*.rpm
+   35  uname -m
+   36  sudo rm -f /tmp/tcpdump-*.i686.rpm
+   37  sudo dnf download --archx86_64 --destdir=/tmp tcpdump
+   38  sudo dnf download --destdir=/tmp tcpdump.x86_64
+   39  ls -l /tmp/tcpdump-*.x86_64.rpm
+   40  sudo rpm -Uvh /tmp/tcpdump-*.x86_64.rpm
+   41  rpm -q tcpdump
+   42  dnf history > dnf.out
+   43  cat /mephi-web/index.html
+   44  echo "Hello from Student: M265833" | sudo tee /mephi-web/index.html
+   45  cat /mephi-web/index.html
+   46  curl http://localhost
+   47  history > ~/history.out
